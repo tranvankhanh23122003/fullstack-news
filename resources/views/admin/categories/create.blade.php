@@ -8,14 +8,13 @@
                     <small>Add</small>
                 </h1>
             </div>
-            {{-- @if(count($errors))
-            <div class="alert alert-danger">
-                @foreach($errors->all() as $err )
-            <p>    {{$err}}</p>
-                @endforeach
-            </div>
-
-            @endif --}}
+            @if ($errors->has())
+@foreach ($errors->all() as $err  )
+<p>
+    {{$err}}
+</p>
+@endforeach
+            @endif
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
                 <form action="{{route('admin.categories.store')}}" method="POST">
@@ -25,7 +24,7 @@
                         <input class="form-control" name="name" placeholder="Please Enter Category Name" />
                     </div>
 
-                    <button type="submit" class="btn btn-default">Category</button>
+                    <button type="submit" class="btn btn-default">Category </button>
                 </form>
             </div>
         </div>

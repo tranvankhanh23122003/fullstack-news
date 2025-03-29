@@ -14,7 +14,7 @@ class Post extends Model
         'description',
         'content',
         'image',
-        'view_counts',
+        // 'view_counts',
         'user_id',
         'new_post',
         'slug',

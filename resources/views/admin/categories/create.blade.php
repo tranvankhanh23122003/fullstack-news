@@ -8,9 +8,9 @@
                     <small>Add</small>
                 </h1>
             </div>
-            @if ($errors->has())
+            @if ($errors->any())
 @foreach ($errors->all() as $err  )
-<p>
+<p style="color: red">
     {{$err}}
 </p>
 @endforeach

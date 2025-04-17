@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable =[
+    protected $fillable = [
         'title',
         'description',
         'content',
@@ -21,14 +21,21 @@ class Post extends Model
         'category_id',
         'hightlight_post',
     ];
-    public function user(){
-        return $this->belongsTo(User::class ,'user_id','id');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
-    public function categories(){
-        return $this->belongsTo(Categories::class, 'category_id','id');
+    public function categories()
+    {
+        return $this->belongsTo(Categories::class, 'category_id', 'id');
     }
-    public function comment(){
-        return $this->hasMany(Comment::class,'user_id','id');
+    public function comment()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
     }
 
+    public function imageUrl()
+    {
+        return asset('image/post/' . $this->image);
+    }
 }

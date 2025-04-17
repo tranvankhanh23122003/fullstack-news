@@ -6,6 +6,13 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Post
                     <small>Add</small>
+                    @if ($errors->any())
+                    @foreach ($errors->all() as $err  )
+                    <p style="color: red">
+                        {{$err}}
+                    </p>
+                    @endforeach
+                                @endif
                 </h1>
             </div>
             <!-- /.col-lg-12 -->

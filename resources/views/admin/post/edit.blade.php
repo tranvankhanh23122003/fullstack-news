@@ -7,13 +7,14 @@
                 <h1 class="page-header">Post
                     <small>Edit</small>
                 </h1>
-                @if (count($errors))
-                <div class="alert alert-danger">
-                    @foreach ($errors->all() as $err )
-                {{$err}}
-                    @endforeach
-                </div>
-                                @endif
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $err )
+            {{$err}}
+            @endforeach
+        </div>
+
+        @endif
                           @if (session('thanhcong'))
                           <div class="alert alert-success">
                           {{session('thanhcong')}}

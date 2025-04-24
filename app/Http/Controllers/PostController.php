@@ -127,8 +127,9 @@ $post->update([
     //    return redirect()->route('admin.post.index')->with('thanh cong', 'tao thanh cong');
        return redirect()->route('admin.post.index');
     }
-    public function delete()
+    public function delete($id)
     {
-        return 'ok';
+         Post::where('id' ,$id )->delete();
+         return redirect()->route('admin.post.index')->with('thanh cong ' ,'xoa thanh cong');
     }
 }
